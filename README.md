@@ -17,7 +17,7 @@ A discord bot that sends messages to a channel whenever a specific user tweets u
 
 ## Support
 Join my Masta Coders Discord server and come join a community of coders, investors and thinkers come join!
-[![CodeLife Join button](https://lh3.googleusercontent.com/fzcABKSlqRjUbdjrmjB8iHUKhKphQcJ1RNEy_kKv1zCEkT6cA9xnu4IABMkxhfJDfcRAfmShaMTHFs3N76z5=w1440-h464-rw)](https://discord.gg/DMbMmQvvQh)
+[![CodeLife Join button](https://imgur.com/a/Y9aGcpZ)](https://discord.gg/DMbMmQvvQh)
 
 [You can also support me  via Patreon](http://patreon.com/qdot)!
 Every donation helps us afford more time to create projects and classes for underserved youth!
