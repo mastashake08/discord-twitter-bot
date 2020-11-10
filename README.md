@@ -26,7 +26,7 @@ Every donation helps us afford more time to create projects and classes for unde
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [npm](https://npmjs.org) to install the dependencies. Then copy the example .env file and fill in with appropriate values.
 
 ```bash
  git clone https://github.com/mastashake08/discord-twitter-bot.git
