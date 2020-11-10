@@ -8,7 +8,7 @@ A discord bot that sends messages to a channel whenever a specific user tweets u
 
 ## Table Of Contents
 
-- [Support The Project](#support-the-project)
+- [Support The Project](#support)
 - [Installation](#installation)
 
 - [Usage Example](#usage)
