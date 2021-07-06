@@ -17,7 +17,8 @@ client.once('ready', () => {
   var stream = T.stream('statuses/filter', { follow: [process.env.TWITTER_USER_ID] })
 
   stream.on('tweet', function (tweet) {
-    //...
+    //only show owner tweets
+    if(tweet.user.id == process.env.TWITTER_USER_ID) {
     var url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str;
     try {
         let channel = client.channels.fetch(process.env.DISCORD_CHANNEL_ID).then(channel => {
@@ -27,6 +28,7 @@ client.once('ready', () => {
         })
     } catch (error) {
             console.error(error);
+      }
     }
   })
 })
