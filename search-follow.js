@@ -1,7 +1,5 @@
 require('dotenv').config()
 const Twit = require('twit')
-const Discord = require('discord.js');
-const client = new Discord.Client();
 
 
 var T = new Twit({
@@ -12,18 +10,15 @@ var T = new Twit({
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
   strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
-client.login(process.env.DISCORD_TOKEN);
-client.once('ready', () => {
-  var stream = T.stream('statuses/filter', { track: ['#blacktechtwitter', '#codelife'], language: 'en' })
+var stream = T.stream('statuses/filter', { track: ['#blacktechtwitter', '#codelife'], language: 'en' })
 
-  stream.on('tweet', function (tweet) {
-    //...
-    var user = tweet.user;
-    try {
-      T.post('friendships/create', {screen_name: user.screen_name})
-      console.log('Followed ' + user.screen_name)
-    } catch (error) {
-
+stream.on('tweet', function (tweet) {
+  //...
+  var user = tweet.user;
+  try {
+    T.post('friendships/create', {screen_name: user.screen_name})
+    console.log('Followed ' + user.screen_name)
+  } catch (error) {
+    console.log(error)
     }
   })
-})
