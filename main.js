@@ -1,6 +1,6 @@
 require('dotenv').config()
 const Twit = require('twitter-v2')
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client } = require('discord.js');
 const client = new Client({ intents: 2048 });
 
 
@@ -16,19 +16,14 @@ var T = new Twit({
 
 //   //only show owner tweets
 async function sendMessage (tweet, client){
-//console.log(tweet)
-const url = "https://twitter.com/user/status/" + tweet.id;
-try {
-  //console.log(client)
-  
-  const channel = await client.channels.fetch(process.env.DISCORD_CHANNEL_ID)
-  //console.log('channel', [process.env.DISCORD_CHANNEL_ID, channel])
-  channel.send(url)
-} catch (error) {
-      console.error(error);
+  const url = "https://twitter.com/user/status/" + tweet.id;
+  try {
+    const channel = await client.channels.fetch(process.env.DISCORD_CHANNEL_ID)
+    channel.send(url)
+  } catch (error) {
+        console.error(error);
+  }
 }
-}
-// })
 
 async function listenForever(streamFactory, dataConsumer) {
   try {
