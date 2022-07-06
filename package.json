@@ -22,8 +22,9 @@
   },
   "homepage": "https://github.com/mastashake08/discord-twitter-bot#readme",
   "dependencies": {
-    "discord.js": "^12.4.1",
+    "discord.js": "^13.8.1",
     "dotenv": "^8.2.0",
-    "twit": "^2.2.11"
+    "twit": "^2.2.11",
+    "twitter-v2": "^1.1.0"
   }
 }
