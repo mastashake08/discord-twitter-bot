@@ -13,15 +13,14 @@ var T = new Twit({
   // strictSSL:            true,     // optional - requires SSL certificates to be valid.
   bearer_token:  process.env.BEARER_TOKEN
 })
-// const stream =
-//
-// stream.on('tweet', function (tweet) {
+
 //   //only show owner tweets
 async function sendMessage (tweet, client){
 //console.log(tweet)
 const url = "https://twitter.com/user/status/" + tweet.id;
 try {
   //console.log(client)
+  
   const channel = await client.channels.fetch(process.env.DISCORD_CHANNEL_ID)
   //console.log('channel', [process.env.DISCORD_CHANNEL_ID, channel])
   channel.send(url)
