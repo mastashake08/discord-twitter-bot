@@ -19,7 +19,7 @@ async function sendMessage (tweet, client){
   const url = "https://twitter.com/user/status/" + tweet.id;
   try {
     const channel = await client.channels.fetch(process.env.DISCORD_CHANNEL_ID)
-    channel.send(url)
+    channel.send(process.env.CHANNEL_MESSAGE, url)
   } catch (error) {
         console.error(error);
   }
