@@ -33,6 +33,11 @@ Use the package manager [npm](https://npmjs.org) to install the dependencies. Th
  npm install
  cp .env.example .env
  #set values for TWITTER and DISCORD APIs in .env
+ TWITTER_USER_NAME=
+ DISCORD_TOKEN=
+ DISCORD_CHANNEL_ID=
+ BEARER_TOKEN=
+ CHANNEL_MESSAGE=
 
 
 
@@ -42,6 +47,11 @@ Use the package manager [npm](https://npmjs.org) to install the dependencies. Th
 
 ```bash
 node main.js
+```
+### Docker
+
+```bash
+docker run  --env-file=<PATH TO .ENV> mastashake08/discord-twitter-bot:latest
 ```
 
 ## Contributing
