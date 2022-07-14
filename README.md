@@ -51,7 +51,10 @@ node main.js
 ### Docker
 
 ```bash
-docker run  --env-file=<PATH TO .ENV> mastashake08/discord-twitter-bot:latest
+# On linux/amd64 architechture
+docker run --platform linux/amd64 --env-file=<PATH TO .ENV> -d --name=<NAME> mastashake08/discord-twitter-bot
+
+docker run  --env-file=<PATH TO .ENV> -d --name=<NAME> mastashake08/discord-twitter-bot:latest
 ```
 
 ## Contributing
