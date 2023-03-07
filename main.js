@@ -16,6 +16,7 @@ var T = new Twit({
 
 //   //only show owner tweets
 async function sendMessage (tweet, client){
+  console.log(tweet)
   const url = "https://twitter.com/user/status/" + tweet.id;
   try {
     const channel = await client.channels.fetch(process.env.DISCORD_CHANNEL_ID)
@@ -38,7 +39,7 @@ async function listenForever(streamFactory, dataConsumer) {
     // probably have retry logic here to prevent reconnection after a number of
     // closely timed failures (may indicate a problem that is not downstream).
     console.warn('Stream disconnected with error. Retrying.', error);
-    listenForever(streamFactory, dataConsumer);
+   // listenForever(streamFactory, dataConsumer);
   }
 }
 
@@ -55,15 +56,14 @@ async function  setup () {
         {"value": "from:"+ process.env.TWITTER_USER_NAME, "tag": "from Me!!"}
       ]
     }
-    const r = await T.post("tweets/search/stream/rules", body);
-    console.log(r);
+   const r = await T.post("tweets/search/stream/rules", body);
 
   } catch (err) {
     console.log(err)
   }
 
   listenForever(
-    () => T.stream('tweets/search/stream', endpointParameters),
+    () => T.stream('tweets/search/stream'),
     (data) => sendMessage(data, client)
   );
 }

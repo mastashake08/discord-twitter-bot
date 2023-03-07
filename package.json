@@ -1,6 +1,6 @@
 {
   "name": "discord-twitter-bot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A discord bot that sends messages to a channel whenever a specific user tweets.",
   "main": "main.js",
   "scripts": {
@@ -26,8 +26,8 @@
     "dotenv": "^8.2.0",
     "twitter-v2": "^1.1.0"
   },
-  "engines" : {
-    "npm" : ">=7.0.0",
-    "node" : ">=16.0.0"
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
   }
 }
